@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ object.shortcode }}
+{% endblock title %}
+
+{%block content %}
+<div class="text-center" style="margin-top: 150px">
+    <h1> Created! </h1>
+    <p>{{ object.url }}</p>
+
+    <p><a class="btn btn-secondary-subtle btn-link" href='{{ object.url }}'>{{ object.get_short_url }}</a></p>
+    <a href="{% url 'copy_link' shortcode=object.shortcode %}" class="btn btn-secondary">Copy Link</a>
+    <a class="btn btn-outline-light" href="/">+ New </a>
+</div>
+{% endblock content %}

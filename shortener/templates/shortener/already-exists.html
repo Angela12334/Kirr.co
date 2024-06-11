@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ object.shortcode }}
+{% endblock title %}
+
+
+{%block content %}
+<div class="text-center" style="margin-top: 170px">
+    <h1> Exists Already </h1>
+    <p>{{ object.url }}</p>
+
+    <p><a class='btn btn-secondary subtle btn-link' href='{{ object.url }}'>{{ object.get_short_url }}</a></p>
+    <p><a href="{% url 'copy_link' shortcode=object.shortcode %}" class="btn-outline-light">Copy Link</a></p>
+    <a class='btn btn-outline-light' href="/">+ New </a>
+</div>
+{% endblock content %}
